@@ -8,6 +8,7 @@
 - `npm i express express-graphql graphql`
 - `npm i --save-dev nodemon`
 - configure package.json file `"scripts": {"devStart": "nodemon server.js"},`
+- project run `npm devStart`
 
 ### Topics Cover graphQL
 - query: `query{message}`
