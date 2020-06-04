@@ -9,8 +9,8 @@
 - `npm i --save-dev nodemon`
 - configure package.json file `"scripts": {"devStart": "nodemon server.js"},`
 
-### Topics Cover Backend
-
+### Topics Cover graphQL
+- query: `query{message}`
 
 
 
