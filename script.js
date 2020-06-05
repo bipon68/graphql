@@ -50,7 +50,13 @@ continentSelect.addEventListener('change', async e => {
 
     const continentCode = e.target.value
     const countries = await getContinentCountries(continentCode)
-
+    console.log(countries)
+    countryList.innerHTML = ''
+    countries.forEach(country => {
+      const element = document.createElement('div')
+      element.innerText = country.name
+      countryList.append(element)
+    })
 })
 
 function getContinentCountries(continentCode) {
@@ -65,21 +71,22 @@ function getContinentCountries(continentCode) {
         }
     `, {code: continentCode}).then(data => {
         console.log(data)
+        return data.data.continent.countries
     })
 }
 
 
 
 function queryFetch(query, variables) {
-    return fetch('https://countries.trevorblades.com/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: query,
-        variables: variables
-      })
-    }).then(res => res.json())
-  }
+  return fetch('https://countries.trevorblades.com/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  }).then(res => res.json())
+}
 
 
 
