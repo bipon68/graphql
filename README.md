@@ -13,6 +13,21 @@
 
 ### Topics Cover graphQL
 - query: `query{message}`
+- book list query `{books {name}}`
+- author list query `{authors {name}}`
+- single book query `{book(id: 2) {name}}`
+- single author query `{author(id: 2) {name}}`
+- add a book `mutation{addBook(name:"New Book", authorId:1){name, id}}`
+- add an author `mutation{addAuthor(name:"New Author"){id}}`
+- author all `{
+  authors{
+    id,
+    name,
+    books{
+      name
+    }
+  }
+}`
 
 
 
